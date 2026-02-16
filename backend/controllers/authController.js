@@ -1,7 +1,7 @@
 // controllers/authController.js
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
-const emailService = require('../services/emailService');
+const emailService = require('../services/emailService-resend');
 
 // Generate JWT Token
 const generateToken = (userId) => {
