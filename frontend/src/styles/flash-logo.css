@@ -1,0 +1,120 @@
+.flash-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.flash-logo.small {
+  transform: scale(0.8);
+}
+
+.flash-logo.large {
+  transform: scale(1.2);
+}
+
+.lightning-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.lightning {
+  position: absolute;
+  font-size: 40px;
+  color: #ffd700;
+  filter: drop-shadow(0 0 10px #ffaa00) drop-shadow(0 0 20px #e63946);
+  animation: lightningFlash 2s infinite;
+}
+
+.bolt-1 {
+  top: 0;
+  left: 0;
+  animation-delay: 0s;
+}
+
+.bolt-2 {
+  top: 5px;
+  left: 10px;
+  animation-delay: 0.5s;
+  opacity: 0.7;
+}
+
+.bolt-3 {
+  top: -5px;
+  left: 20px;
+  animation-delay: 1s;
+  opacity: 0.5;
+}
+
+@keyframes lightningFlash {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #ffd700);
+  }
+  25% { 
+    transform: scale(1.2) rotate(10deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 30px #ffaa00) drop-shadow(0 0 50px #e63946);
+  }
+  50% { 
+    transform: scale(0.9) rotate(-5deg);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 20px #ffd700);
+  }
+  75% { 
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 40px #e63946);
+  }
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.flash {
+  font-size: 28px;
+  background: linear-gradient(135deg, #e63946 0%, #ffaa00 50%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.taxi {
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 0 0 10px #e63946, 0 0 20px #ffaa00;
+  letter-spacing: 3px;
+}
+
+.speed-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    rgba(255, 215, 0, 0.1) 5px,
+    rgba(230, 57, 70, 0.1) 10px
+  );
+  pointer-events: none;
+  animation: speedLines 20s linear infinite;
+  border-radius: 10px;
+}
+
+@keyframes speedLines {
+  0% { background-position: 0 0; }
+  100% { background-position: 200% 0; }
+}
